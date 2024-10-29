@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="TW Productions. | Home">
+	<main>
+		<section id="home">
+			<h1>Tygo Wolven</h1>
+		</section>
+		<section id="about">
+
+		</section>
+		<section id="work">
+			<h2>Highlighted Work</h2>
+			<article>
+				<Card
+					href="#"
+					title="Squadpage"
+					body="NodeJS, EJS, Express"
+				/>
+			</article>
+			<article>
+				<Card
+					href="#"
+					title="My Learning Blog"
+					body="Sveltekit, Markdown"
+				/>
+			</article>
+			<article>
+				<Card
+					href="#"
+					title="Fresk Digital"
+					body="NodeJS, EJS, Express"
+				/>
+			</article>
+			<article>
+				<Card
+					href="#"
+					title="Business News Radio"
+					body="HTML, CSS, JS"
+				/>
+			</article>
+			<a href="/work">See all my work</a>
+		</section>
+		<section id="contact">
+
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.card:nth-of-type(1) {
+		width: 66%;
+	}
+	.card:nth-of-type(1) {
+		width: 66%;
+	}
+	.card:nth-of-type(1) {
+		width: 66%;
+	}
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+	h1 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+</style>

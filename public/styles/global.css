@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Raleway;
+    src: url(/assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Antonio;
+    src: url(/assets/fonts/Antonio-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: Antonio;
+}
+
+p, a {
+    font-family: Raleway;
+}
