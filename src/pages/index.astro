@@ -19,8 +19,10 @@ import Card from '../components/Card.astro';
 					title="Squadpage"
 					body="NodeJS, EJS, Express"
 				/>
+				<img src="/assets/images/placeholder.png" alt="">
 			</article>
 			<article>
+				<img src="/assets/images/placeholder.png" alt="">
 				<Card
 					href="#"
 					title="My Learning Blog"
@@ -28,6 +30,7 @@ import Card from '../components/Card.astro';
 				/>
 			</article>
 			<article>
+				<img src="/assets/images/freskdigital.png" alt="">
 				<Card
 					href="#"
 					title="Fresk Digital"
@@ -40,6 +43,15 @@ import Card from '../components/Card.astro';
 					title="Business News Radio"
 					body="HTML, CSS, JS"
 				/>
+				<img src="/assets/images/bnr.png" alt="">
+			</article>
+			<article>
+				<Card
+					href="#"
+					title="De Hallen"
+					body="HTML, CSS, JS"
+				/>
+				<img src="/assets/images/dehallen.png" alt="">
 			</article>
 			<a href="/work">See all my work</a>
 		</section>
@@ -50,19 +62,28 @@ import Card from '../components/Card.astro';
 </Layout>
 
 <style>
-	.card:nth-of-type(1) {
-		width: 66%;
+	article {
+		display: flex;
+		width: 80%;
+		margin: 2rem 0;
 	}
-	.card:nth-of-type(1) {
-		width: 66%;
+	article:nth-of-type(3),
+	article:nth-of-type(5) {
+		justify-self: center;
 	}
-	.card:nth-of-type(1) {
-		width: 66%;
+	article:nth-of-type(4) {
+		justify-self: flex-end;
+	}
+	img {
+		width: 100%;
+		height: 200px; 
+		object-fit: cover;
+		background: grey;
 	}
 	main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 1200px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 18px;
