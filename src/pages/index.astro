@@ -1,70 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout title="TW Productions. | Home">
-	<main>
-		<section id="home">
-			<h1>Tygo Wolven</h1>
-		</section>
-		<section id="about">
+	<section id="home">
+		<h1>Tygo Wolven</h1>
+	</section>
 
-		</section>
-		<section id="work">
-			<h2>Highlighted Work</h2>
-			<article>
-				<Card
-					href="#"
-					title="Squadpage"
-					body="NodeJS, EJS, Express"
-				/>
-				<img src="/assets/images/placeholder.png" alt="">
-			</article>
-			<article>
-				<img src="/assets/images/placeholder.png" alt="">
-				<Card
-					href="#"
-					title="My Learning Blog"
-					body="Sveltekit, Markdown"
-				/>
-			</article>
-			<article>
-				<img src="/assets/images/freskdigital.png" alt="">
-				<Card
-					href="#"
-					title="Fresk Digital"
-					body="NodeJS, EJS, Express"
-				/>
-			</article>
-			<article>
-				<Card
-					href="#"
-					title="Business News Radio"
-					body="HTML, CSS, JS"
-				/>
-				<img src="/assets/images/bnr.png" alt="">
-			</article>
-			<article>
-				<Card
-					href="#"
-					title="De Hallen"
-					body="HTML, CSS, JS"
-				/>
-				<img src="/assets/images/dehallen.png" alt="">
-			</article>
-			<a href="/work">See all my work</a>
-		</section>
-		<section id="contact">
+	<section id="about">
+		<h2>About me</h2>
+	</section>
 
-		</section>
-	</main>
+	<section id="work">
+		<h2>Highlighted Work</h2>
+
+		<article>
+			<Card
+				href="#"
+				title="Squadpage"
+				body="NodeJS, EJS, Express"
+			/>
+			<img src="/assets/images/placeholder.png" alt="">
+		</article>
+		<article>
+			<img src="/assets/images/placeholder.png" alt="">
+			<Card
+				href="#"
+				title="My Learning Blog"
+				body="Sveltekit, Markdown"
+			/>
+		</article>
+		<article>
+			<img src="/assets/images/freskdigital.png" alt="">
+			<Card
+				href="#"
+				title="Fresk Digital"
+				body="NodeJS, EJS, Express"
+			/>
+		</article>
+		<article>
+			<Card
+				href="#"
+				title="Business News Radio"
+				body="HTML, CSS, JS"
+			/>
+			<img src="/assets/images/bnr.png" alt="">
+		</article>
+		<article>
+			<Card
+				href="#"
+				title="De Hallen"
+				body="HTML, CSS, JS"
+			/>
+			<img src="/assets/images/dehallen.png" alt="">
+		</article>
+
+		<Button 
+			href="https://github.com/TygoWolven?tab=repositories"
+			title="See all my work on Github"
+		/>
+	</section>
+
+	<section id="contact">
+		<h2>Contact</h2>
+	</section>
 </Layout>
 
 <style>
+	/* ##### Home Section ##### */
+	h1 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	/* ##### Work Section ##### */
 	article {
 		display: flex;
 		width: 80%;
+		gap: 2rem;
 		margin: 2rem 0;
 	}
 	article:nth-of-type(3),
@@ -74,23 +88,13 @@ import Card from '../components/Card.astro';
 	article:nth-of-type(4) {
 		justify-self: flex-end;
 	}
+	article:hover {
+		scale: 0.99;
+	}
 	img {
 		width: 100%;
 		height: 200px; 
 		object-fit: cover;
 		background: grey;
-	}
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 1200px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 18px;
-		line-height: 1.6;
-	}
-	h1 {
-		text-align: center;
-		margin-bottom: 1em;
 	}
 </style>
