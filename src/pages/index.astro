@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="TW Productions. | Frontend Developer">
@@ -104,6 +105,7 @@ import Navigation from '../components/Navigation.astro';
 		<div class="backdrop"></div>
 	</section>
 
+	<Footer />
 </Layout>
 
 <style>
@@ -140,6 +142,11 @@ import Navigation from '../components/Navigation.astro';
 			aspect-ratio: 1;
 			filter: grayscale(0.5);
 			width: min(500px, 70vw);
+		}
+	}
+	@media (max-width: 755px) {
+		#home {
+			height: calc(100vh - 13.5rem);
 		}
 	}
 
