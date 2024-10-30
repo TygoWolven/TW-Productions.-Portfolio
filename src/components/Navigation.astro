@@ -1,5 +1,7 @@
 ---
 import Button from "./Button.astro"
+
+
 ---
 
     <nav>
@@ -14,15 +16,24 @@ import Button from "./Button.astro"
 
 <style>
     nav {
-        justify-self: end;
         position: sticky;
-        z-index: 100;
+        justify-self: end;
         top: 2rem;
+        z-index: 100;
+        padding: 1em 0;
+        backdrop-filter: blur(5px);
+        background: rgba(25, 25, 25, 0.6);
+        border: 1px solid rgba(200, 200, 200, 0.2);
     }
     a {
         margin: 0 1rem;
     }
     a:hover {
         text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+        nav {
+            display: none;
+        }
     }
 </style>

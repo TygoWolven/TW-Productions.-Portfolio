@@ -25,6 +25,8 @@ import Navigation from '../components/Navigation.astro';
 			where we are learning a lot about combining <strong>HTML5, CSS3 and JS</strong> with different types 
 			of <strong>frameworks with dynamic data.</strong>
 		</p>
+
+		<div class="backdrop"></div>
 	</section>
 
 	<section id="work">
@@ -34,7 +36,7 @@ import Navigation from '../components/Navigation.astro';
 			<a href="https://github.com/TygoWolven/Sprint7-Squadpage">
 				<div>
 					<h3>Squadpage</h3>
-					<p>NodeJS, EJS, Express</p>
+					<strong>NodeJS, EJS, Express</strong>
 				</div>
 				<img src="/assets/images/squadpage.png" alt="">
 			</a>
@@ -44,7 +46,7 @@ import Navigation from '../components/Navigation.astro';
 				<img class="align-top" src="/assets/images/learningblog.png" alt="">
 				<div>
 					<h3>My Learning Blog</h3>
-					<p>Sveltekit, Markdown</p>
+					<strong>Sveltekit, Markdown</strong>
 				</div>
 			</a>
 		</article>
@@ -53,7 +55,7 @@ import Navigation from '../components/Navigation.astro';
 				<img src="/assets/images/freskdigital.png" alt="">
 				<div>
 					<h3>Fresk Digital</h3>
-					<p>NodeJS, EJS, Express</p>
+					<strong>NodeJS, EJS, Express</strong>
 				</div>
 			</a>
 		</article>
@@ -61,7 +63,7 @@ import Navigation from '../components/Navigation.astro';
 			<a href="https://github.com/TygoWolven/Sprint6-Responsive-Interactive-Website">
 				<div>
 					<h3>Business News Radio</h3>
-					<p>HTML, CSS, JS</p>
+					<strong>HTML, CSS, JS</strong>
 				</div>
 				<img class="align-top" src="/assets/images/bnr.png" alt="">
 			</a>
@@ -70,7 +72,7 @@ import Navigation from '../components/Navigation.astro';
 			<a href="https://github.com/TygoWolven/Sprint10-Enhanced-Website">
 				<div>
 					<h3>De Hallen</h3>
-					<p>NodeJS, EJS, Express</p>
+					<strong>NodeJS, EJS, Express</strong>
 				</div>
 				<img src="/assets/images/dehallen.png" alt="">
 			</a>
@@ -98,6 +100,7 @@ import Navigation from '../components/Navigation.astro';
 			</li>
 		</ul>
 	</section>
+
 </Layout>
 
 <style>
@@ -111,18 +114,19 @@ import Navigation from '../components/Navigation.astro';
 		align-items: center;
 	}
 	#home {
-		height: calc(100vh - 4rem);
+		height: calc(100vh - 4.5rem);
 	}
 	#home h1 {
 		line-height: 1;
-		font-size: 11vw;
-		margin-left: 11%;
+		font-size: max(11vw, 5rem);
+		margin-left: max(11%, 22%);
 		text-wrap: nowrap;
 	}
 	#home h1 span {
-		font-size: 11vw;
+		position: relative;
+		font-size: max(11vw, 4.5rem);
 		color: transparent;
-		-webkit-text-stroke: 1px var(--white);
+		-webkit-text-stroke: 2px var(--secondary);
 	}
 	#home img {
 		position: absolute;
@@ -130,17 +134,46 @@ import Navigation from '../components/Navigation.astro';
 		width: 500px;
 		aspect-ratio: 1;
 		filter: grayscale(0.5);
-	}
-	#work {
-		padding-top: 6rem;
+		width: min(500px, 70vw);
 	}
 	#about p {
 		max-width: 64ch;
 		text-align: justify;
 		justify-self: center;
 	}
+	.backdrop {
+		width: 50vw;
+		height: 100%;
+		opacity: 0.25;
+		z-index: -100;
+		position: absolute;
+		background: linear-gradient(
+		to right,
+		transparent 45%, 
+		var(--primary) 45% 55%, 
+		transparent 55%);
+		background-size: 30px;
+	}
+	.backdrop::before,
+	.backdrop::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 30%;
+		background: linear-gradient(
+			var(--darkgrey) 50%,
+			transparent
+		);
+	}
+	.backdrop::after {
+		bottom: 0;
+		rotate: 180deg;
+	}
 	strong {
 		color: var(--secondary);
+	}
+	#work {
+		padding-top: 6rem;
 	}
 	article {
 		width: 80%;
@@ -180,5 +213,18 @@ import Navigation from '../components/Navigation.astro';
 	}
 	.align-top {
 		object-position: top;
+	}
+	@media (max-width: 755px) {
+		article {
+			width: 90vw;
+			margin: 1rem 0;
+			justify-self: center !important;
+		}
+		article:last-of-type {
+			margin-bottom: 2rem;
+		}
+		article a div {
+			display: none;
+		}
 	}
 </style>
