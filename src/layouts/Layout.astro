@@ -10,11 +10,14 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">		
-		<link rel="icon" type="image/png" href="/assets/images/TSW-Logo.png" />
+
 		<link rel="stylesheet" href="/styles/global.css">
-		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/png" href="/assets/images/TSW-Logo.png" />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 		<title>{title}</title>
 	</head>
 	<body>

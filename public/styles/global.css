@@ -32,17 +32,22 @@
 }
 
 html {
+    width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     font-family: system-ui, sans-serif;
     background: var(--darkgrey);
-    width: 100%;
-    overflow-x: hidden;
+
 }
 
 main {
     margin: auto;
     width: 1200px;
     max-width: calc(100% - 2rem);
+}
+
+body {
+	overflow: clip;
 }
 
 h1, h2 {
@@ -72,4 +77,8 @@ h3 {
 
 p, a {
     font-family: Raleway;
+}
+
+strong {
+    color: var(--secondary);
 }
