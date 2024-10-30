@@ -1,7 +1,25 @@
-<header>
+---
+import Button from "./Button.astro"
+---
+
     <nav>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#work">Work</a>
-        <button><a href="#contact">Let's talk</a></button>
+        <Button 
+            href="#contact"
+            title="Let's talk"
+        />
     </nav>
-</header>
+
+<style>
+    nav {
+        justify-self: end;
+        position: sticky;
+        z-index: 100;
+        top: 2rem;
+    }
+    a {
+        margin: 0 1rem;
+    }
+</style>

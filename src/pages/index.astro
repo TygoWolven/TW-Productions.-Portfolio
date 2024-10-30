@@ -1,60 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
+import Navigation from '../components/Navigation.astro';
 ---
 
-<Layout title="TW Productions. | Home">
+<Layout title="TW Productions. | Frontend Developer">
+
 	<section id="home">
-		<h1>Tygo Wolven</h1>
+		<h1 aria-hidden="false">
+			<span aria-hidden="true">Wolven</span> Tygo <span aria-hidden="true">Wolven Wolven</span> <br>
+			<span aria-hidden="true">Tygo Tygo</span> Wolven <span aria-hidden="true">Tygo Tygo</span>
+		</h1>
+		<img src="/assets/images/portrait.png" alt="">
 	</section>
+
+	<Navigation />
 
 	<section id="about">
 		<h2>About me</h2>
+		<p>
+			Hi! My name is <strong>Tygo Wolven</strong>, and I'm 20 years old. I am currently studying to 
+			become a frontend developer at the <strong>Amsterdam University of Applied Sciences.</strong> 
+			Right now I am in the second year of a study called <strong>Frontend Design & Development,</strong> 
+			where we are learning a lot about combining <strong>HTML5, CSS3 and JS</strong> with different types 
+			of <strong>frameworks with dynamic data.</strong>
+		</p>
 	</section>
 
 	<section id="work">
 		<h2>Highlighted Work</h2>
 
-		<article>
-			<Card
-				href="#"
-				title="Squadpage"
-				body="NodeJS, EJS, Express"
-			/>
-			<img src="/assets/images/placeholder.png" alt="">
+		<article class="right">
+			<a href="https://github.com/TygoWolven/Sprint7-Squadpage">
+				<div>
+					<h3>Squadpage</h3>
+					<p>NodeJS, EJS, Express</p>
+				</div>
+				<img src="/assets/images/squadpage.png" alt="">
+			</a>
 		</article>
-		<article>
-			<img src="/assets/images/placeholder.png" alt="">
-			<Card
-				href="#"
-				title="My Learning Blog"
-				body="Sveltekit, Markdown"
-			/>
+		<article class="left">
+			<a href="https://tygowolven-learning-blog.netlify.app/">
+				<img class="align-top" src="/assets/images/learningblog.png" alt="">
+				<div>
+					<h3>My Learning Blog</h3>
+					<p>Sveltekit, Markdown</p>
+				</div>
+			</a>
 		</article>
-		<article>
-			<img src="/assets/images/freskdigital.png" alt="">
-			<Card
-				href="#"
-				title="Fresk Digital"
-				body="NodeJS, EJS, Express"
-			/>
+		<article class="left">
+			<a href="https://github.com/TygoWolven/Sprint12-Proof-of-Concept">
+				<img src="/assets/images/freskdigital.png" alt="">
+				<div>
+					<h3>Fresk Digital</h3>
+					<p>NodeJS, EJS, Express</p>
+				</div>
+			</a>
 		</article>
-		<article>
-			<Card
-				href="#"
-				title="Business News Radio"
-				body="HTML, CSS, JS"
-			/>
-			<img src="/assets/images/bnr.png" alt="">
+		<article class="right">
+			<a href="https://github.com/TygoWolven/Sprint6-Responsive-Interactive-Website">
+				<div>
+					<h3>Business News Radio</h3>
+					<p>HTML, CSS, JS</p>
+				</div>
+				<img class="align-top" src="/assets/images/bnr.png" alt="">
+			</a>
 		</article>
-		<article>
-			<Card
-				href="#"
-				title="De Hallen"
-				body="HTML, CSS, JS"
-			/>
-			<img src="/assets/images/dehallen.png" alt="">
+		<article class="right">
+			<a href="https://github.com/TygoWolven/Sprint10-Enhanced-Website">
+				<div>
+					<h3>De Hallen</h3>
+					<p>NodeJS, EJS, Express</p>
+				</div>
+				<img src="/assets/images/dehallen.png" alt="">
+			</a>
 		</article>
 
 		<Button 
@@ -69,17 +88,60 @@ import Button from '../components/Button.astro';
 </Layout>
 
 <style>
-	/* ##### Home Section ##### */
-	h1 {
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	/* ##### Work Section ##### */
-	article {
+	#home,
+	#about, 
+	#contact {
+		height: 100vh;
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	#home {
+		height: calc(100vh - 4rem);
+	}
+	#home h1 {
+		line-height: 1;
+		font-size: 11vw;
+		margin-left: 11%;
+		text-wrap: nowrap;
+	}
+	#home h1 span {
+		font-size: 11vw;
+		color: transparent;
+		-webkit-text-stroke: 1px var(--white);
+	}
+	#home img {
+		position: absolute;
+		z-index: -100;
+		width: 500px;
+		aspect-ratio: 1;
+		filter: grayscale(0.5);
+	}
+	#work {
+		padding-top: 6rem;
+	}
+	#about p {
+		max-width: 64ch;
+		text-align: justify;
+		justify-self: center;
+	}
+	strong {
+		color: var(--secondary);
+	}
+	article {
 		width: 80%;
-		gap: 2rem;
 		margin: 2rem 0;
+		transition: 0.2s ease;
+	}
+	article a {
+		display: flex;
+		gap: 2rem;
+	}
+	article a div {
+		width: 70%;
+		align-self: center;
+		justify-content: center;
 	}
 	article:nth-of-type(3),
 	article:nth-of-type(5) {
@@ -88,13 +150,22 @@ import Button from '../components/Button.astro';
 	article:nth-of-type(4) {
 		justify-self: flex-end;
 	}
-	article:hover {
-		scale: 0.99;
+	article.left:hover {
+		transform: rotateX(5deg) rotateY(10deg) rotateZ(-1deg);
+		transform-origin: left;
 	}
-	img {
+	article.right:hover {
+		transform: rotateX(-5deg) rotateY(10deg) rotateZ(1deg);
+		transform-origin: right;
+	}
+	#work img {
 		width: 100%;
 		height: 200px; 
 		object-fit: cover;
 		background: grey;
+		filter: grayscale(0.5);
+	}
+	.align-top {
+		object-position: top;
 	}
 </style>
