@@ -3,6 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+import { Image } from "astro:assets"
+import Portrait from "../../src/assets/images/portrait.png"
+import Squadpage from "../../src/assets/images/squadpage.png"
+import Blog from "../../src/assets/images/learningblog.png"
+import Fresk from "../../src/assets/images/freskdigital.png"
+import BNR from "../../src/assets/images/bnr.png"
+import Hallen from "../../src/assets/images/dehallen.png"
 ---
 
 <script>
@@ -109,7 +117,7 @@ import Footer from '../components/Footer.astro';
 				<span>o</span>
 			</div>
 		</div>
-		<img src="/assets/images/portrait.png" alt="Portrait of Tygo Wolven">
+		<Image src={Portrait} alt="A portrait of Tygo Wolven" loading='eager' />
 	</section>
 
 	<Navigation />
@@ -136,12 +144,12 @@ import Footer from '../components/Footer.astro';
 					<h3>Squadpage</h3>
 					<strong>NodeJS, EJS, Express</strong>
 				</div>
-				<img class="bright" src="/assets/images/squadpage.png" alt="">
+				<Image class='bright' src={Squadpage} alt="Preview of my squadpage" />
 			</a>
 		</article>
 		<article class="left">
 			<a href="https://tygowolven-learning-blog.netlify.app/" target="_blank">
-				<img class="align-top" src="/assets/images/learningblog.png" alt="">
+				<Image class='align-top' src={Blog} alt="Preview of my Learning Blog" />
 				<div>
 					<h3>Learning Blog</h3>
 					<strong>Sveltekit, Markdown</strong>
@@ -150,7 +158,7 @@ import Footer from '../components/Footer.astro';
 		</article>
 		<article class="left">
 			<a href="https://sprint12-proof-of-concept.onrender.com/" target="_blank">
-				<img src="/assets/images/freskdigital.png" alt="">
+				<Image src={Fresk} alt="Preview of my website for: Fresk Digital" />
 				<div>
 					<h3>Fresk Digital</h3>
 					<strong>NodeJS, EJS, Express</strong>
@@ -163,7 +171,7 @@ import Footer from '../components/Footer.astro';
 					<h3>News Radio</h3>
 					<strong>HTML, CSS, JS</strong>
 				</div>
-				<img class="align-top" src="/assets/images/bnr.png" alt="">
+				<Image class='align-top' src={BNR} alt="Preview of my website for: Business News Radio" />
 			</a>
 		</article>
 		<article class="right">
@@ -172,7 +180,7 @@ import Footer from '../components/Footer.astro';
 					<h3>De Hallen</h3>
 					<strong>NodeJS, EJS, Express</strong>
 				</div>
-				<img src="/assets/images/dehallen.png" alt="">
+				<Image src={Hallen} alt="Preview of my website for: De Hallen" />
 			</a>
 		</article>
 
@@ -243,11 +251,11 @@ import Footer from '../components/Footer.astro';
 		}
 
 		img {
-			position: absolute;
 			z-index: -100;
-			aspect-ratio: 1;
+			position: absolute;
 			filter: grayscale(0.5);
 			width: min(500px, 70vw);
+			height: min(500px, 70vw);
 		}
 	}
 	@media (max-width: 755px) {
