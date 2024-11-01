@@ -20,14 +20,35 @@
 Dit is mijn Frontend Portfolio. Hierin is wat algemene informatie te vinden over mij, en mijn werk waar ik het meest trots op ben.
 
 ## Screenshots 
-*(Updated: 29-10-2024)*
+*(Updated: 01-11-2024)*
 
-### Homepagina
-<img width="700" src="https://github.com/user-attachments/assets/e2ccc374-c0b4-44b4-87e4-7fd036b90a98">
+### Desktop
+#### Homepagina
+<img width="700" src="https://github.com/user-attachments/assets/5ad144ac-ced6-4afa-99d6-547e01eedcff">
 
-### Workpagina
-<img width="700" src="https://github.com/user-attachments/assets/770c3df0-db4e-480b-b563-8bb5475f35c7">
+#### Aboutpagina
+<img width="700" src="https://github.com/user-attachments/assets/fdee0eac-0cea-4ac5-81f9-e8aecbe8ce1a">
 
+#### Workpagina
+<img width="700" src="https://github.com/user-attachments/assets/b7221380-8810-48f8-a06b-2956ba6b60a2">
+
+#### Contactpagina
+<img width="700" src="https://github.com/user-attachments/assets/4f341962-c6fb-461b-bdf6-0520d0700175">
+
+### Mobile
+#### Homepagina
+<img width="200" src="https://github.com/user-attachments/assets/cedccd5e-790b-48d5-9939-5da7e75ba364">
+
+#### Aboutpagina
+<img width="200" src="https://github.com/user-attachments/assets/af23cf55-a070-4303-a3ab-fc00cc40dc76">
+
+#### Workpagina
+<img width="200" src="https://github.com/user-attachments/assets/d56abd28-e26d-4f20-9297-e282f96530b8">
+
+#### Contactpagina
+<img width="200" src="https://github.com/user-attachments/assets/9559de54-e02e-481c-83e2-9cb919003119">
+
+####
 ## Kenmerken
 <img src="https://img.shields.io/badge/Astro-000000?style=for-the-badge&logo=astro&logoColor=white">
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
@@ -49,7 +70,8 @@ npm install
 npm run dev
 ````
 ## To-do List
-- [ ] Kleine bugfix animatie werkpagina.
+- [ ] Readme uitbereiden: Leuke website features beschrijven
+- [ ] Code refactoren
 
 ## Bronnen
 - ¹ **Ik ben zelf de bron:** *"Tygo Wolven"*
