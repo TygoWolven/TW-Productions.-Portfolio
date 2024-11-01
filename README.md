@@ -49,9 +49,7 @@ npm install
 npm run dev
 ````
 ## To-do List
-- [ ] Homepagina animeren
-- [ ] Aboutpagina vormgeven
-- [ ] Contactpagina aanmaken
+- [ ] Kleine bugfix animatie werkpagina.
 
 ## Bronnen
 - ¹ **Ik ben zelf de bron:** *"Tygo Wolven"*
