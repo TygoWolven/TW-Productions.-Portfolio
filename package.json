@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "astro": "^4.16.7",
-    "astro-compress": "^2.3.5",
-    "astro-compressor": "^0.4.1",
     "boxicons": "^2.1.4"
   }
 }
