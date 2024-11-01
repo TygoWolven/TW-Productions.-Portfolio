@@ -285,6 +285,8 @@ import Footer from '../components/Footer.astro';
 			justify-self: center;
 		} article:nth-of-type(4) {
 			justify-self: flex-end;
+		} article.right div {
+			text-align: right;
 		} article.right:hover {
 			transform: rotateX(-5deg) rotateY(10deg) rotateZ(1deg);
 			transform-origin: right;
@@ -314,6 +316,7 @@ import Footer from '../components/Footer.astro';
 					z-index: 50;
 					position: absolute;
 					align-self: flex-end;
+					text-align: left !important;
 					background: linear-gradient(
 						transparent,
 						var(--darkgrey)
