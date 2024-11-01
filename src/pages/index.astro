@@ -5,16 +5,111 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
+<script>
+	const textContainers = document.querySelectorAll(".word");
+
+	const defaultScale = 1;
+	const maxScale = 1.5;
+	const neighborScale = 1.25;
+ 
+	textContainers.forEach((textContainer) => {
+		const spans = textContainer.querySelectorAll("span");
+
+		textContainer.addEventListener("mousemove", (e) => {
+			const target = e.target;
+			const index = Array.from(spans).indexOf(target);
+
+			spans.forEach((span, i) => {
+				let scale = defaultScale;
+
+				if(i === index) {
+					scale = maxScale;
+				} else if (i === index - 1 || i === index + 1) {
+					scale = neighborScale;
+				}
+
+				span.style.transform = `scaleY(${scale})`;
+
+			});
+		});
+		textContainer.addEventListener("mouseleave", () => {
+			spans.forEach((span) => {
+				span.style.transform = `scaleY(${defaultScale})`;
+			})
+		})
+	})
+</script>
+
 <Layout title="TW Productions. | Frontend Developer">
 
 	<section id="home">
-		<div class="wrapper">
-			<h1 aria-hidden="false">
-				<span aria-hidden="true">Wolven</span> Tygo <span aria-hidden="true">Wolven Wolven</span> <br>
-				<span aria-hidden="true">Tygo Tygo</span> Wolven <span aria-hidden="true">Tygo Tygo</span>
-			</h1>
+		<div class="container">
+			<div class="word">
+				<span>W</span>
+				<span>o</span>
+				<span>l</span>
+				<span>v</span>
+				<span>e</span>
+				<span>n</span>
+			</div>
+			<div class="word filled">
+				<span>T</span>
+				<span>y</span>
+				<span>g</span>
+				<span>o</span>
+			</div>
+			<div class="word">
+				<span>W</span>
+				<span>o</span>
+				<span>l</span>
+				<span>v</span>
+				<span>e</span>
+				<span>n</span>
+			</div>
+			<div class="word">
+				<span>W</span>
+				<span>o</span>
+				<span>l</span>
+				<span>v</span>
+				<span>e</span>
+				<span>n</span>
+			</div>
 		</div>
-		<img src="/assets/images/portrait.png" alt="">
+		<div class="container bottom">
+			<div class="word">
+				<span>T</span>
+				<span>y</span>
+				<span>g</span>
+				<span>o</span>
+			</div>
+			<div class="word">
+				<span>T</span>
+				<span>y</span>
+				<span>g</span>
+				<span>o</span>
+			</div>
+			<div class="word filled">
+				<span>W</span>
+				<span>o</span>
+				<span>l</span>
+				<span>v</span>
+				<span>e</span>
+				<span>n</span>
+			</div>
+			<div class="word">
+				<span>T</span>
+				<span>y</span>
+				<span>g</span>
+				<span>o</span>
+			</div>
+			<div class="word">
+				<span>T</span>
+				<span>y</span>
+				<span>g</span>
+				<span>o</span>
+			</div>
+		</div>
+		<img src="/assets/images/portrait.png" alt="Portrait of Tygo Wolven">
 	</section>
 
 	<Navigation />
@@ -122,17 +217,29 @@ import Footer from '../components/Footer.astro';
 	#home {
 		height: calc(100vh - 4.5rem);
 
-		.wrapper h1 {
+		.container {
+			display: flex;
+			margin-left: 12%;
+		} .bottom span {
+			transform-origin: top !important;
+		} .word {
+			display: flex;
+			margin: 0 0.6%;
 			line-height: 1;
-			margin-left: 5%;
-			text-wrap: nowrap;
-			pointer-events: none;
-			font-size: max(11vw, 4.5rem);
-		} .wrapper h1 span {
-			color: transparent;
-			position: relative;
-			font-size: max(11vw, 4.5rem);
-			-webkit-text-stroke: 2px var(--secondary);
+
+			span {
+				-webkit-text-stroke: 2px var(--secondary);
+				font-size: max(11vw, 4.5rem);
+				font-family: Antonio;
+				font-weight: bold;
+				color: transparent;
+				transition: 150ms ease;
+				transform-origin: bottom;
+				text-transform: uppercase;
+			}
+		} .filled span {
+			color: var(--white);
+			-webkit-text-stroke: unset;
 		}
 
 		img {
