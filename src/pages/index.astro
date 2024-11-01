@@ -143,7 +143,7 @@ import Footer from '../components/Footer.astro';
 			<a href="https://tygowolven-learning-blog.netlify.app/">
 				<img class="align-top" src="/assets/images/learningblog.png" alt="">
 				<div>
-					<h3>My Learning Blog</h3>
+					<h3>Learning Blog</h3>
 					<strong>Sveltekit, Markdown</strong>
 				</div>
 			</a>
@@ -319,10 +319,13 @@ import Footer from '../components/Footer.astro';
 						var(--darkgrey)
 					);
 					padding: 1rem;
-					width: 90%;
+					width: 90vw;
 				}
 			} article:last-of-type {
 				margin-bottom: 2rem;
+			} article.left:hover {
+				transform: rotateX(-5deg) rotateY(10deg) rotateZ(1deg);
+				transform-origin: right;
 			}
 
 			img {
