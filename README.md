@@ -70,7 +70,8 @@ npm install
 npm run dev
 ````
 ## To-do List
-- [ ] Readme uitbereiden: Leuke website features beschrijven
+- [ ] Leuke website features beschrijven
+- [ ] Live-links toevoegen op de website
 - [ ] Code refactoren
 
 ## Bronnen
