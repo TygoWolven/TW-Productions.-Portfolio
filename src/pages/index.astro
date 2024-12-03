@@ -204,6 +204,20 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
+	article {
+		animation: reveal linear forwards;
+		animation-timeline: view();
+	}
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(50%);
+		}
+		50% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 	#home,
 	#about, 
 	#contact {
@@ -233,7 +247,7 @@ import Footer from '../components/Footer.astro';
 				font-family: Antonio;
 				font-weight: bold;
 				color: transparent;
-				transition: 150ms ease;
+				transition: 0.2s ease;
 				transform-origin: bottom;
 				text-transform: uppercase;
 			}
@@ -363,14 +377,13 @@ import Footer from '../components/Footer.astro';
 		button {
 			cursor: pointer;
 			margin: 0.25rem 0;
-        	transition: 0.25s ease;
+        	transition: 0.2s ease;
 			padding: 0.75rem 1.75rem;
         	background: var(--primary);
 			border: 1px solid var(--secondary);
 			align-self: flex-end;
 		} button:hover {
 			box-shadow: 0 0 50px var(--primary);
-
 		}
 	}
 
